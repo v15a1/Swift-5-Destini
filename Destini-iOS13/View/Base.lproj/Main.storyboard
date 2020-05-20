@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,13 +14,89 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ssb-L2-K1v">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="897"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="BKR-U5-JYY">
+                                <rect key="frame" x="20" y="64" width="374" height="812"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQm-OF-Uyj">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="402.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EII-Hg-iUi">
+                                                <rect key="frame" x="20" y="20" width="374" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBa-vW-RBf">
+                                        <rect key="frame" x="0.0" y="409.5" width="374" height="402.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVO-kN-ed8">
+                                                <rect key="frame" x="-20" y="77" width="414" height="247"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAl-7k-XzE">
+                                                        <rect key="frame" x="20" y="127" width="374" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="uYA-of-2bj"/>
+                                                        </constraints>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" backgroundImage="choice1Background"/>
+                                                        <connections>
+                                                            <action selector="choiceMade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3VP-B7-gFo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-cS-kS9">
+                                                        <rect key="frame" x="20" y="20" width="374" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="cAY-To-mS3"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="choice2Background">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="choiceMade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hn3-Tw-aBi"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="zVO-kN-ed8" firstAttribute="centerY" secondItem="eBa-vW-RBf" secondAttribute="centerY" id="2Tg-p7-x96"/>
+                                            <constraint firstItem="zVO-kN-ed8" firstAttribute="centerX" secondItem="eBa-vW-RBf" secondAttribute="centerX" id="af1-ad-9sw"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BKR-U5-JYY" secondAttribute="trailing" constant="20" id="4ZB-J9-Asz"/>
+                            <constraint firstItem="BKR-U5-JYY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6Z0-sP-ote"/>
+                            <constraint firstAttribute="bottom" secondItem="BKR-U5-JYY" secondAttribute="bottom" constant="20" id="Re0-Ba-yPy"/>
+                            <constraint firstItem="BKR-U5-JYY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="lju-6W-b1V"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="button1" destination="LM7-cS-kS9" id="QjP-Cz-s08"/>
+                        <outlet property="button2" destination="xAl-7k-XzE" id="jWT-lL-B6a"/>
+                        <outlet property="storyLabel" destination="EII-Hg-iUi" id="EV6-rb-RnV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="958" height="1793"/>
+        <image name="choice1Background" width="1370.5" height="363"/>
+        <image name="choice2Background" width="1370.5" height="363"/>
+    </resources>
 </document>
